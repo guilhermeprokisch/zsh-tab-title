@@ -23,7 +23,7 @@ function title {
     print -Pn "\e]1;$termTitle:q\a" # set tab name
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
-    echo "$tabTitle" | (read p1; kitty @set-tab-title  $p1)
+    echo "$tabTitle" | (read p1; kitty @set-tab-title  "test")
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})

@@ -19,11 +19,11 @@ function title {
   if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
     print -Pn "\e]2;$termTitle:q\a" # set window name
     print -Pn "\e]1;$tabTitle:q\a" # set tab name
-  elif [[ "$TERM_PROGRAM" == "Hyper" ]]; then
+  elif [[ "$TERM_PROGRAM" == :"Hyper" ]]; then
     print -Pn "\e]1;$termTitle:q\a" # set tab name
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
-    echo "$termTitle" | (read p1; kitty @set-tab-title $p1)
+    kitty @set-tab-title $(tabTitle)
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})

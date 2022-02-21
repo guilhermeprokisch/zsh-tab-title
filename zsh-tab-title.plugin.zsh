@@ -25,7 +25,7 @@ function title {
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     kitty @set-tab-title $1
 
-    if [["$1"=="guilherme" ]]; then
+    if [[ "$1"  ==  "$USER" ]]; then
       kitty @set-tab-title 'home'
     fi      
   else

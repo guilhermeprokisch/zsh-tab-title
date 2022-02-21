@@ -23,8 +23,8 @@ function title {
     print -Pn "\e]1;$termTitle:q\a" # set tab name
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
-    comm=($1)
-    kitty @set-tab-title $comm[1]
+    comm=echo $1 | head -n1 | awk '{print $1;}'
+    kitty @set-tab-title $comm
 
     if [[ "$1"  ==  "$USER" ]]; then
       kitty @set-tab-title '~'

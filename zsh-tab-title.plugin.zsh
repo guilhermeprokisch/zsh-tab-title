@@ -24,6 +24,9 @@ function title {
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     kitty @set-tab-title $1
+
+    if [["$1"=="guilherme" ]]; then
+      kitty @set-tab-title 'home'
       
   else
     case "$TERM" in

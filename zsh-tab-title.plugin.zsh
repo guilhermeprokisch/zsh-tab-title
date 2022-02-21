@@ -82,9 +82,9 @@ function omz_termsupport_preexec {
   local LINE="${2:gs/%/%%}"
 
   if [[ "$ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS" == true ]]; then
-    title "${PWD##*/}:%100>...>$LINE%<<" "${PWD##*/}:${CMD}"
+    title "${PWD##*/}:$LINE" "${PWD##*/}:${CMD}"
   else
-    title "%100>...>$LINE%<<" "$CMD"
+    title "$LINE" "$CMD"
   fi  
 }
 

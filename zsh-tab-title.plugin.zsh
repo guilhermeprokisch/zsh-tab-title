@@ -26,7 +26,7 @@ function title {
     kitty @set-tab-title $1
 
     if [[ "$1"  ==  "$USER" ]]; then
-      kitty @set-tab-title 'home'
+      kitty @set-tab-title '~'
     fi      
   else
     case "$TERM" in

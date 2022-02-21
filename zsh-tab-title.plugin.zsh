@@ -27,7 +27,7 @@ function title {
 
     if [["$1"=="guilherme" ]]; then
       kitty @set-tab-title 'home'
-      
+    fi      
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})

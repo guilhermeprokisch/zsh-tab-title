@@ -23,10 +23,9 @@ function title {
     print -Pn "\e]1;$termTitle:q\a" # set tab name
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
-    if [["$1" == $USER]]; then
-      kitty @set-tab-title "~"
-    else
-      kitty @set-tab-title $1
+
+    kitty @set-tab-title $1
+      
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})
@@ -83,7 +82,7 @@ function omz_termsupport_preexec {
 	  local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
   fi
   local LINE="${2:gs/%/%%}"
-
+    title "${PWD##*/}:$LINE" "${PWD##*/}:${CMD}"
   if [[ "$ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS" == true ]]; then
     title "${PWD##*/}:$LINE" "${PWD##*/}:${CMD}"
   else

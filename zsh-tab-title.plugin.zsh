@@ -22,7 +22,7 @@ function title {
   elif [[ "$TERM_PROGRAM" == :"Hyper" ]]; then
     print -Pn "\e]1;$termTitle:q\a" # set tab name
     print -Pn "\e]2;$tabTitle:q\a" # set window name
-  elif [[ "$TERM_PROGRAM" == "kitty" ]]; then
+  elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     kitty @set-tab-title $1
   else
     case "$TERM" in

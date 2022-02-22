@@ -28,11 +28,11 @@ function title {
     kitty @set-tab-title $comm
 
     if [[ "$1"  ==  "$USER" ]]; then
-      kitty @set-tab-title $comm
+      kitty @set-tab-title '~'
     fi      
 
     if [[ "$1"  ==  "exit" ]]; then
-      kitty @set-tab-title $comm
+      kitty @set-tab-title 'dd'
     fi      
 
   else

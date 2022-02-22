@@ -32,7 +32,7 @@ function title {
     fi      
 
     if [[ "$1"  ==  "exit" ]]; then
-      kitty @set-tab-title 'vim'
+      kitty @set-tab-title ''
     fi      
 
   else

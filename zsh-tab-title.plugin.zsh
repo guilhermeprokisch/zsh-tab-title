@@ -24,12 +24,17 @@ function title {
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     all=$(echo $1)
-    comm=${all%% *}
+    first=${all%% *}
     kitty @set-tab-title $comm
 
     if [[ "$1"  ==  "$USER" ]]; then
       kitty @set-tab-title '~'
     fi      
+
+    if [[ "$1"  ==  "exit" ]]; then
+      kitty @set-tab-title 'vim'
+    fi      
+
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})

@@ -24,11 +24,11 @@ function title {
     print -Pn "\e]2;$tabTitle:q\a" # set window name
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     all=$(echo $1)
-    first=${all%% *}
+    comm=${all%% *}
     kitty @set-tab-title $comm
 
     if [[ "$1"  ==  "$USER" ]]; then
-      kitty @set-tab-title '~'
+      kitty @set-tab-title '~/'
     fi      
 
   else

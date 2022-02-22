@@ -32,7 +32,7 @@ function title {
     fi      
 
     if [[ "$1"  ==  "exit" ]]; then
-      kitty @set-tab-title '~'
+      kitty @set-tab-title 'test'
     fi      
 
   else

@@ -25,7 +25,7 @@ function title {
   elif [[ "$TERM_PROGRAM" == "Kitty" ]]; then
     all=$(echo $1)
     first=${all%% *}
-    kitty @set-tab-title $comm
+    kitty @set-tab-title 'test'
 
     if [[ "$1"  ==  "$USER" ]]; then
       kitty @set-tab-title $comm

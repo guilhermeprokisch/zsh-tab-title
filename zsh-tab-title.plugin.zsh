@@ -31,10 +31,6 @@ function title {
       kitty @set-tab-title '~'
     fi      
 
-    if [[ "$1"  ==  "exit" ]]; then
-      kitty @set-tab-title 'dddd'
-    fi      
-
   else
     case "$TERM" in
       cygwin|xterm*|putty*|rxvt*|ansi|${~ZSH_TAB_TITLE_ADDITIONAL_TERMS})
